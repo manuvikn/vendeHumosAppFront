@@ -1,0 +1,9 @@
+.pointer {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.marginLados {
+    margin-right: 3%;
+    margin-left: 3%;
+}

@@ -1,0 +1,33 @@
+<h1>Lista de todos los vende humos</h1>
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="form-group"  style="width: 60%;">
+            <input [(ngModel)]="inputBuscar" class="form-control form-control-lg" (input)=buscarVende($event) type="text" placeholder="Busca por el título" id="inputLarge">
+        </div>
+        <div style="width: 35%;">
+            <div class="d-flex flex-wrap align-items-center justify-content-between">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Ordenar
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <button (click)="buscarOrdenados('id')" class="dropdown-item" type="button">Fecha</button>
+                      <button (click)="buscarOrdenados('titulo')" class="dropdown-item" type="button">Titulo</button>
+                      <button class="dropdown-item" type="button">Popularidad</button>
+                    </div>
+                </div>
+    
+                <button (click)="crearVende()" class="btn btn-success" 
+                data-toggle="modal" data-target="#modalCrear">
+                Crear vende humos</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <app-card *ngFor="let vendeHumos of listaAllVende" [vendeHumos]="vendeHumos"></app-card>
+
+</div>

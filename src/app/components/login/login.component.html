@@ -1,0 +1,49 @@
+
+<div class="container pt-4">
+    
+    <h1 class="text-center">Bienvenido a vendeHumosApp</h1>
+    
+    <div class="w-50 mx-auto mt-4">
+        <form *ngIf="!displayLogin" [formGroup]="loginForm" class="animate__animated animate__fadeIn">
+            <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" formControlName="username">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" (blur)="comprobarContrasenia()" class="form-control" formControlName="pass1">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" (blur)="comprobarContrasenia()" class="form-control"
+                 formControlName="pass2"
+                 [ngClass]="loginForm.get('pass2')?.errors?.invalidPass ? 'is-invalid' : ''">
+                <div *ngIf="loginForm.get('pass2')?.errors?.invalidPass" class="invalid-feedback">Las contraseñas no son iguales.</div>
+            </div>
+
+        </form>
+
+        <form *ngIf="displayLogin" [formGroup]="loginForm" class="animate__animated animate__fadeIn">
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" class="form-control" formControlName="username">
+            </div>
+    
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" formControlName="pass1">
+            </div>
+                
+        </form>
+
+        <div class="d-grid gap-2 mt-4">
+            <button (click)="submitLogin()" class="btn btn-lg btn-primary" [disabled]="!loginForm.valid" type="button">{{primaryButton}}</button>
+            <button (click)="changeDisplay()" type="button" class="btn btn-secondary btn-sm">{{secondaryButton}}</button>
+        </div>
+    </div>
+
+
+
+    
+
+</div>

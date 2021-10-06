@@ -1,16 +1,36 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/dom/navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { MainComponent } from './components/dom/main/main.component';
+import { BodyComponent } from './components/dom/body/body.component';
+import { CardComponent } from './components/card/card.component';
+import { CrearVendeComponent } from './components/crear-vende/crear-vende.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    LoginComponent,
+    MainComponent,
+    BodyComponent,
+    CardComponent,
+    CrearVendeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
