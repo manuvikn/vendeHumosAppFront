@@ -13,6 +13,9 @@ import { MainComponent } from './components/dom/main/main.component';
 import { BodyComponent } from './components/dom/body/body.component';
 import { CardComponent } from './components/card/card.component';
 import { CrearVendeComponent } from './components/crear-vende/crear-vende.component';
+import { InfoVendeComponent } from './components/info-vende/info-vende.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { CrearVendeComponent } from './components/crear-vende/crear-vende.compon
     MainComponent,
     BodyComponent,
     CardComponent,
-    CrearVendeComponent
+    CrearVendeComponent,
+    InfoVendeComponent,
+    ProfileComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,

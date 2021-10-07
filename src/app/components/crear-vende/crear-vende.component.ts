@@ -40,7 +40,11 @@ export class CrearVendeComponent implements OnInit {
     let fechaCreacion = new Date().toLocaleDateString()
     let creador = this.loginService.decodeToken();
     
-    return {...this.crearVendeForm.value, 'fechaCreacion': fechaCreacion, 'usuarioId': creador};
+    return {...this.crearVendeForm.value, 
+            'fechaCreacion': fechaCreacion,
+            'usuarioId': creador,
+            'votos': 0
+          };
     
   }
 

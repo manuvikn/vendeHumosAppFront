@@ -1,0 +1,40 @@
+<div *ngIf="user">
+    <h1>Bienvenido a tu perfil @{{ user.username }}</h1>
+    
+    <div class="container mt-4">
+    
+        <div class="w-75 mx-auto mt-4">
+            <div *ngIf="user.avatar && user.avatar !== ''" class="text-center animate__animated animate__fadeIn">
+                <img [src]="user.avatar"
+                class="rounded-circle img-thumbnail" alt="Cinque Terre" width="250" height="250"> 
+            </div>
+
+            <form [formGroup]="userForm" class="animate__animated animate__fadeIn">
+                <div class="form-group mb-2">
+                <label>Username</label>
+                <input type="text" class="form-control" formControlName="username">
+                </div>
+                <div class="form-group mb-2">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" formControlName="nombre">
+                </div>
+                <div class="form-group mb-2">
+                    <label>Email</label>
+                    <input type="email" class="form-control" formControlName="email">
+                </div>
+                <div class="form-group mb-2">
+                    <label>Avatar</label>
+                    <input type="text" class="form-control" formControlName="avatar">
+                </div>
+    
+            </form>
+    
+            <div class="d-grid gap-2 mt-4">
+                <button (click)="submitUser()" class="btn btn-lg btn-primary" [disabled]="userForm.invalid" type="button">Guardar datos</button>
+            </div>
+    
+        </div>
+    
+    </div>
+
+</div>

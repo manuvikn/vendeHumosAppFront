@@ -39,6 +39,18 @@ export class LoginService {
 
   }
 
+  getUserById( id: number) {
+
+    return this.http.get(`${this.enpoint}usuarios?id=${id}`);
+
+  }
+
+  updateUser(user: User, id: number) {
+
+    return this.http.patch(`${this.enpoint}usuarios/${id}`, user);
+
+  }
+
   async comprobarUserDuplicado(username: string): Promise<boolean> {
 
     let userDuplicado = false;

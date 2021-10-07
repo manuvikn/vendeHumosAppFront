@@ -10,8 +10,9 @@
 
         </div>
         <div class="ml-auto">
-            <button class="btn btn-primary">Más info</button>
+            <button (click)="votarVende(vendeHumos.id)" class="btn btn-info m-2">Votar ({{ vendeHumos.votos }})</button>
+            <a [routerLink]="['/vende-humos', vendeHumos.id]" class="btn btn-primary" role="button">Más info</a>
         </div>
 
     </div>
-  </div>
+</div>
